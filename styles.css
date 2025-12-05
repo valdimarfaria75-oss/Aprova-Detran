@@ -1,0 +1,47 @@
+/* Mantive as classes visuais e adicionei classes utilitárias para o app */
+/* Reset rápido */
+* { box-sizing: border-box; }
+body { margin: 0; font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; background:#0f1724; color:#fff; }
+
+/* Container */
+.container { max-width: 1100px; margin: 0 auto; }
+
+/* Header/footer visuals inspired by what you sent */
+.bg-slate-950 { background: #0b1220; }
+.bg-slate-900 { background: #111827; }
+.text-yellow-500 { color: #f6c244; }
+
+/* Card styles used in modules */
+.card { display:flex; background:#0f1724; border-radius:8px; overflow:hidden; border:1px solid rgba(255,255,255,0.03); }
+.card-header { width:72px; display:flex; align-items:center; justify-content:center; font-size:28px; color:#111827; }
+.card-body { padding:14px; flex:1; }
+.card-body h4 { margin:0 0 6px 0; }
+.card-body p { margin:0 0 8px 0; color:#9aa3b2; }
+
+/* Buttons util */
+.cta-btn { cursor:pointer; }
+.study-btn { cursor:pointer; color:#f6c244; background:transparent; border:none; padding:6px 0; }
+.q-btn { background:#253043; color:#cbd5e1; border-radius:6px; padding:8px 12px; border:1px solid rgba(255,255,255,0.03); cursor:pointer; }
+.q-btn.active { background:#f6c244; color:#000; border-color:#f6c244; }
+
+/* Pages */
+.page { display:block; }
+.page.hidden { display:none; }
+
+/* Modal */
+.modal-root { position:fixed; inset:0; display:flex; align-items:center; justify-content:center; z-index:60; }
+.modal-root.hidden { display:none; }
+.modal-backdrop { position:absolute; inset:0; background:rgba(0,0,0,0.6); }
+.modal { position:relative; z-index:10; background:#0f1724; border-radius:8px; padding:20px; width:360px; box-shadow:0 10px 30px rgba(0,0,0,0.6); }
+
+/* Timer */
+#timer { font-weight:700; }
+
+/* History list */
+.history-item { display:flex; justify-content:space-between; align-items:center; background:#0b1722; padding:12px; border-radius:8px; border:1px solid rgba(255,255,255,0.03); }
+
+/* small responsive tweaks */
+@media (max-width:800px){
+  .container { padding: 0 16px; }
+  #main-nav { display:none !important; }
+}
