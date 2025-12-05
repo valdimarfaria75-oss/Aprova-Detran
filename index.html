@@ -1,342 +1,944 @@
-<!doctype html>
-<html lang="pt-BR">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>AutoEscola Digital — Simulados</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <!-- App root: mantive seu HTML/estrutura e marquei seções com data-page -->
-  <div id="app" class="min-h-screen bg-slate-950 text-white font-sans">
-
+<!-- @webstudio/inception/1 -->
+<div class="min-h-screen bg-slate-950 text-white font-sans">
     <!-- Header -->
     <header class="fixed top-0 w-full bg-slate-950/80 backdrop-blur-md z-50">
-      <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-        <div class="flex items-center space-x-2">
-          <div class="w-12 h-12 bg-red-600 flex items-center justify-center rounded-sm">
-            <span class="text-xl font-bold">A</span>
-          </div>
-          <h1 class="text-2xl font-bold">AutoEscola<span class="text-yellow-500">Digital</span></h1>
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <div class="w-12 h-12 bg-red-600 flex items-center justify-center rounded-sm">
+                    <span class="text-xl font-bold">A</span>
+                </div>
+                <h1 class="text-2xl font-bold">AutoEscola<span class="text-yellow-500">Digital</span></h1>
+            </div>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#" class="hover:text-yellow-500 transition">Conteúdo</a>
+                <a href="#" class="hover:text-yellow-500 transition">Simulados</a>
+                <a href="#" class="hover:text-yellow-500 transition">Meu Progresso</a>
+                <a href="#" class="hover:text-yellow-500 transition">Perfil</a>
+            </nav>
+            <button class="md:hidden text-2xl">
+                <span>☰</span>
+            </button>
         </div>
-
-        <nav id="main-nav" class="hidden md:flex space-x-8">
-          <a href="#" data-nav="content" class="nav-link hover:text-yellow-500 transition">Conteúdo</a>
-          <a href="#" data-nav="simulados" class="nav-link hover:text-yellow-500 transition">Simulados</a>
-          <a href="#" data-nav="history" class="nav-link hover:text-yellow-500 transition">Meu Progresso</a>
-          <a href="#" data-nav="profile" class="nav-link hover:text-yellow-500 transition">Perfil</a>
-        </nav>
-
-        <div class="flex items-center space-x-3">
-          <div id="user-area" class="hidden md:block text-sm text-slate-300">
-            <span id="user-greet"></span>
-          </div>
-          <button id="login-btn" class="bg-yellow-500 text-black py-2 px-3 rounded-md">Entrar</button>
-          <button class="md:hidden text-2xl" id="mobile-menu-btn">☰</button>
-        </div>
-      </div>
     </header>
 
-    <!-- PAGES: cada "tela" tem data-page. Inicialmente mostraremos 'home' -->
-    <main class="pt-24">
-      <!-- HOME / Conteúdo (mantive sua hero e seções) -->
-      <section data-page="content" class="page">
-        <!-- (Hero + Módulos) copy exato do seu HTML original para preservar aparência -->
-        <!-- Hero Section -->
-        <section class="pt-8 pb-12 relative overflow-hidden hero-area">
-          <div class="container mx-auto px-4 py-16 relative z-10">
+    <!-- Hero Section -->
+    <section class="pt-24 pb-12 relative overflow-hidden">
+        <div class="container mx-auto px-4 py-16 relative z-10">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-              <div>
-                <h1 class="text-4xl md:text-6xl font-bold mb-6">Sua aprovação <span class="text-yellow-500">garantida</span></h1>
-                <p class="text-xl mb-8">Estude onde e quando quiser com nossa plataforma completa para o exame teórico do DETRAN.</p>
-                <div class="flex flex-wrap gap-4">
-                  <button class="cta-btn bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-3 px-6 rounded-md transition" data-action="start-quick">Começar Agora</button>
-                  <button class="border border-white hover:border-yellow-500 hover:text-yellow-500 py-3 px-6 rounded-md transition" data-action="open-plans">Conhecer Planos</button>
+                <div>
+                    <h1 class="text-4xl md:text-6xl font-bold mb-6">Sua aprovação <span class="text-yellow-500">garantida</span></h1>
+                    <p class="text-xl mb-8">Estude onde e quando quiser com nossa plataforma completa para o exame teórico do DETRAN.</p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#" class="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-3 px-6 rounded-md transition">Começar Agora</a>
+                        <a href="#" class="border border-white hover:border-yellow-500 hover:text-yellow-500 py-3 px-6 rounded-md transition">Conhecer Planos</a>
+                    </div>
                 </div>
-              </div>
-              <div class="relative">
-                <img src="https://preview.webstudio.ai/cgi/image/dev/e6fa58cc4fe474a3a3577a0e3a49dae5189e4d2493550b809bdaa8d166dea781.png?width=1408&height=704&format=auto" alt="Ilustração de conceitos de direção" class="rounded-lg shadow-2xl" width="1408" height="704">
-                <div class="absolute -bottom-4 -right-4 w-24 h-24 bg-blue-600 rounded-sm"></div>
-                <div class="absolute -top-4 -left-4 w-16 h-16 bg-red-600 rounded-sm"></div>
-              </div>
+                <div class="relative">
+                    <img src="https://preview.webstudio.ai/cgi/image/dev/e6fa58cc4fe474a3a3577a0e3a49dae5189e4d2493550b809bdaa8d166dea781.png?width=1408&height=704&format=auto" alt="Ilustração de conceitos de direção" class="rounded-lg shadow-2xl" width="1408" height="704">
+                    <div class="absolute -bottom-4 -right-4 w-24 h-24 bg-blue-600 rounded-sm"></div>
+                    <div class="absolute -top-4 -left-4 w-16 h-16 bg-red-600 rounded-sm"></div>
+                </div>
             </div>
-          </div>
-          <div class="absolute top-0 right-0 w-1/3 h-full bg-blue-600/10 -skew-x-12 transform origin-top-right"></div>
-        </section>
+        </div>
+        <div class="absolute top-0 right-0 w-1/3 h-full bg-blue-600/10 -skew-x-12 transform origin-top-right"></div>
+    </section>
 
-        <!-- Módulos Section -->
-        <section class="py-16 bg-slate-900 modules-area">
-          <div class="container mx-auto px-4">
+    <!-- Módulos Section -->
+    <section class="py-16 bg-slate-900">
+        <div class="container mx-auto px-4">
             <h2 class="text-3xl font-bold mb-2">Conteúdo Teórico</h2>
             <p class="text-slate-400 mb-8">Todo material necessário para sua aprovação</p>
-
-            <!-- Aqui as áreas com botões 'Estudar agora' com data-subject para abrir a tela do conteúdo -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <!-- Exemplo de card (replicar/incluir todos) -->
-              <div class="card">
-                <div class="card-header bg-yellow-600">§</div>
-                <div class="card-body">
-                  <h4 class="font-bold">Código de Trânsito Brasileiro</h4>
-                  <p class="text-sm text-slate-400">Leis e regulamentos fundamentais</p>
-                  <button class="block mt-3 text-yellow-500 study-btn" data-subject="Legislação">Estudar agora</button>
+            
+            <!-- Legislação de Trânsito -->
+            <div class="relative mb-16 pb-4 overflow-hidden">
+                <h3 class="text-xl font-bold mb-4">Legislação de Trânsito</h3>
+                <div class="flex space-x-4 overflow-x-auto pb-4 scrollbar-thin scrollbar-thumb-yellow-500 scrollbar-track-slate-800">
+                    <!-- Código de Trânsito Brasileiro -->
+                    <div class="flex-shrink-0 w-64 bg-slate-800 rounded-md overflow-hidden hover:scale-105 transition cursor-pointer group">
+                        <div class="h-36 bg-yellow-600 flex items-center justify-center">
+                            <span class="text-4xl">§</span>
+                        </div>
+                        <div class="p-4">
+                            <h4 class="font-bold mb-2 group-hover:text-yellow-500 transition">Código de Trânsito Brasileiro</h4>
+                            <p class="text-sm text-slate-400">Leis e regulamentos fundamentais</p>
+                            <div class="pt-3 border-t border-slate-700 mt-3 text-sm">
+                                <ul class="list-disc pl-4 text-slate-400 space-y-1">
+                                    <li>Lei 9.503/97 e suas atualizações</li>
+                                    <li>Princípios e objetivos do CTB</li>
+                                    <li>Direitos e deveres do condutor</li>
+                                    <li>Resoluções CONTRAN atualizadas</li>
+                                </ul>
+                                <a href="#" class="block mt-3 text-yellow-500 hover:underline">Estudar agora</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Normas de Circulação -->
+                    <div class="flex-shrink-0 w-64 bg-slate-800 rounded-md overflow-hidden hover:scale-105 transition cursor-pointer group">
+                        <div class="h-36 bg-blue-600 flex items-center justify-center">
+                            <span class="text-4xl">🚸</span>
+                        </div>
+                        <div class="p-4">
+                            <h4 class="font-bold mb-2 group-hover:text-yellow-500 transition">Normas de Circulação</h4>
+                            <p class="text-sm text-slate-400">Regras para circular com segurança</p>
+                            <div class="pt-3 border-t border-slate-700 mt-3 text-sm">
+                                <ul class="list-disc pl-4 text-slate-400 space-y-1">
+                                    <li>Posição correta na via</li>
+                                    <li>Preferências de passagem</li>
+                                    <li>Limite de velocidade e margens</li>
+                                    <li>Manobras e operações permitidas</li>
+                                </ul>
+                                <a href="#" class="block mt-3 text-yellow-500 hover:underline">Estudar agora</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Infrações e Penalidades -->
+                    <div class="flex-shrink-0 w-64 bg-slate-800 rounded-md overflow-hidden hover:scale-105 transition cursor-pointer group">
+                        <div class="h-36 bg-red-600 flex items-center justify-center">
+                            <span class="text-4xl">⚠</span>
+                        </div>
+                        <div class="p-4">
+                            <h4 class="font-bold mb-2 group-hover:text-yellow-500 transition">Infrações e Penalidades</h4>
+                            <p class="text-sm text-slate-400">Consequências de infrações</p>
+                            <div class="pt-3 border-t border-slate-700 mt-3 text-sm">
+                                <ul class="list-disc pl-4 text-slate-400 space-y-1">
+                                    <li>Classificação das infrações</li>
+                                    <li>Valores de multas atualizados</li>
+                                    <li>Sistema de pontos na CNH</li>
+                                    <li>Recursos administrativos</li>
+                                </ul>
+                                <a href="#" class="block mt-3 text-yellow-500 hover:underline">Estudar agora</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Documentos Obrigatórios -->
+                    <div class="flex-shrink-0 w-64 bg-slate-800 rounded-md overflow-hidden hover:scale-105 transition cursor-pointer group">
+                        <div class="h-36 bg-green-600 flex items-center justify-center">
+                            <span class="text-4xl">📋</span>
+                        </div>
+                        <div class="p-4">
+                            <h4 class="font-bold mb-2 group-hover:text-yellow-500 transition">Documentos Obrigatórios</h4>
+                            <p class="text-sm text-slate-400">O que é preciso para dirigir legalmente</p>
+                            <div class="pt-3 border-t border-slate-700 mt-3 text-sm">
+                                <ul class="list-disc pl-4 text-slate-400 space-y-1">
+                                    <li>CNH e sua validade</li>
+                                    <li>CRLV e licenciamento</li>
+                                    <li>Documentos digitais válidos</li>
+                                    <li>Seguros obrigatórios</li>
+                                </ul>
+                                <a href="#" class="block mt-3 text-yellow-500 hover:underline">Estudar agora</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Habilitação -->
+                    <div class="flex-shrink-0 w-64 bg-slate-800 rounded-md overflow-hidden hover:scale-105 transition cursor-pointer group">
+                        <div class="h-36 bg-purple-600 flex items-center justify-center">
+                            <span class="text-4xl">🚗</span>
+                        </div>
+                        <div class="p-4">
+                            <h4 class="font-bold mb-2 group-hover:text-yellow-500 transition">Habilitação</h4>
+                            <p class="text-sm text-slate-400">Processo de obtenção da CNH</p>
+                            <div class="pt-3 border-t border-slate-700 mt-3 text-sm">
+                                <ul class="list-disc pl-4 text-slate-400 space-y-1">
+                                    <li>Categorias de CNH (A, B, C, D, E)</li>
+                                    <li>Requisitos para cada categoria</li>
+                                    <li>Processo de primeira habilitação</li>
+                                    <li>Renovação e adição de categorias</li>
+                                </ul>
+                                <a href="#" class="block mt-3 text-yellow-500 hover:underline">Estudar agora</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
-
-              <div class="card">
-                <div class="card-header bg-blue-600">🚸</div>
-                <div class="card-body">
-                  <h4 class="font-bold">Normas de Circulação</h4>
-                  <p class="text-sm text-slate-400">Regras para circular com segurança</p>
-                  <button class="block mt-3 text-yellow-500 study-btn" data-subject="Normas">Estudar agora</button>
-                </div>
-              </div>
-
-              <div class="card">
-                <div class="card-header bg-red-600">⚠</div>
-                <div class="card-body">
-                  <h4 class="font-bold">Infrações e Penalidades</h4>
-                  <p class="text-sm text-slate-400">Consequências de infrações</p>
-                  <button class="block mt-3 text-yellow-500 study-btn" data-subject="Infrações">Estudar agora</button>
-                </div>
-              </div>
-
-              <div class="card">
-                <div class="card-header bg-green-600">📋</div>
-                <div class="card-body">
-                  <h4 class="font-bold">Documentos Obrigatórios</h4>
-                  <p class="text-sm text-slate-400">O que é preciso para dirigir legalmente</p>
-                  <button class="block mt-3 text-yellow-500 study-btn" data-subject="Documentos">Estudar agora</button>
-                </div>
-              </div>
-
-              <div class="card">
-                <div class="card-header bg-purple-600">🚗</div>
-                <div class="card-body">
-                  <h4 class="font-bold">Habilitação</h4>
-                  <p class="text-sm text-slate-400">Processo de obtenção da CNH</p>
-                  <button class="block mt-3 text-yellow-500 study-btn" data-subject="Habilitação">Estudar agora</button>
-                </div>
-              </div>
-
-              <div class="card">
-                <div class="card-header bg-cyan-600">🛡</div>
-                <div class="card-body">
-                  <h4 class="font-bold">Direção Defensiva</h4>
-                  <p class="text-sm text-slate-400">Fundamentos da direção segura</p>
-                  <button class="block mt-3 text-yellow-500 study-btn" data-subject="Defensiva">Estudar agora</button>
-                </div>
-              </div>
-
-              <!-- e assim por diante... -->
+                <div class="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-slate-900 to-slate-900/0 pointer-events-none"></div>
             </div>
-          </div>
-        </section>
-      </section>
 
-      <!-- SIMULADOS PAGE -->
-      <section data-page="simulados" class="page hidden">
-        <div class="container mx-auto px-4 py-12">
-          <h2 class="text-3xl font-bold mb-6">Simulados Personalizados</h2>
-
-          <div class="bg-slate-800/60 backdrop-blur-sm rounded-lg p-6 mb-8">
-            <h3 class="font-bold mb-4">Filtros</h3>
-
-            <div class="mb-4">
-              <label class="block mb-2 text-sm">Matéria</label>
-              <select id="filter-subject" class="w-full bg-slate-700 py-3 px-4 rounded-md border border-slate-600">
-                <option value="__all">Todas as matérias (Aleatório)</option>
-                <option value="Legislação">Legislação</option>
-                <option value="Normas">Normas</option>
-                <option value="Infrações">Infrações</option>
-                <option value="Documentos">Documentos</option>
-                <option value="Habilitação">Habilitação</option>
-                <option value="Defensiva">Direção Defensiva</option>
-                <option value="Sinalização">Placas e Sinalização</option>
-                <option value="PrimeirosSocorros">Primeiros Socorros</option>
-                <option value="MeioAmbiente">Meio Ambiente</option>
-                <option value="Mecanica">Mecânica Básica</option>
-                <option value="Cidadania">Cidadania no Trânsito</option>
-              </select>
+            <!-- Direção Defensiva -->
+            <div class="relative mb-16 pb-4 overflow-hidden">
+                <h3 class="text-xl font-bold mb-4">Direção Defensiva</h3>
+                <div class="flex space-x-4 overflow-x-auto pb-4 scrollbar-thin scrollbar-thumb-yellow-500 scrollbar-track-slate-800">
+                    <!-- Conceitos Básicos -->
+                    <div class="flex-shrink-0 w-64 bg-slate-800 rounded-md overflow-hidden hover:scale-105 transition cursor-pointer group">
+                        <div class="h-36 bg-cyan-600 flex items-center justify-center">
+                            <span class="text-4xl">🛡</span>
+                        </div>
+                        <div class="p-4">
+                            <h4 class="font-bold mb-2 group-hover:text-yellow-500 transition">Conceitos Básicos</h4>
+                            <p class="text-sm text-slate-400">Fundamentos da direção segura</p>
+                            <div class="pt-3 border-t border-slate-700 mt-3 text-sm">
+                                <ul class="list-disc pl-4 text-slate-400 space-y-1">
+                                    <li>Os 5 elementos da direção defensiva</li>
+                                    <li>Conhecimento, atenção e previsão</li>
+                                    <li>Distância de segurança</li>
+                                    <li>Tempo de reação e frenagem</li>
+                                </ul>
+                                <a href="#" class="block mt-3 text-yellow-500 hover:underline">Estudar agora</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Condições Adversas -->
+                    <div class="flex-shrink-0 w-64 bg-slate-800 rounded-md overflow-hidden hover:scale-105 transition cursor-pointer group">
+                        <div class="h-36 bg-orange-600 flex items-center justify-center">
+                            <span class="text-4xl">🌧</span>
+                        </div>
+                        <div class="p-4">
+                            <h4 class="font-bold mb-2 group-hover:text-yellow-500 transition">Condições Adversas</h4>
+                            <p class="text-sm text-slate-400">Dirigindo em situações difíceis</p>
+                            <div class="pt-3 border-t border-slate-700 mt-3 text-sm">
+                                <ul class="list-disc pl-4 text-slate-400 space-y-1">
+                                    <li>Chuva, neblina e baixa visibilidade</li>
+                                    <li>Aquaplanagem e como evitá-la</li>
+                                    <li>Direção noturna</li>
+                                    <li>Vias com má conservação</li>
+                                </ul>
+                                <a href="#" class="block mt-3 text-yellow-500 hover:underline">Estudar agora</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Prevenção de Acidentes -->
+                    <div class="flex-shrink-0 w-64 bg-slate-800 rounded-md overflow-hidden hover:scale-105 transition cursor-pointer group">
+                        <div class="h-36 bg-yellow-600 flex items-center justify-center">
+                            <span class="text-4xl">⚠</span>
+                        </div>
+                        <div class="p-4">
+                            <h4 class="font-bold mb-2 group-hover:text-yellow-500 transition">Prevenção de Acidentes</h4>
+                            <p class="text-sm text-slate-400">Como evitar situações de risco</p>
+                            <div class="pt-3 border-t border-slate-700 mt-3 text-sm">
+                                <ul class="list-disc pl-4 text-slate-400 space-y-1">
+                                    <li>Causas comuns de acidentes</li>
+                                    <li>Fator humano: fadiga e distração</li>
+                                    <li>Uso do celular e outros riscos</li>
+                                    <li>Ingestão de álcool e substâncias</li>
+                                </ul>
+                                <a href="#" class="block mt-3 text-yellow-500 hover:underline">Estudar agora</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Comportamento Seguro -->
+                    <div class="flex-shrink-0 w-64 bg-slate-800 rounded-md overflow-hidden hover:scale-105 transition cursor-pointer group">
+                        <div class="h-36 bg-blue-600 flex items-center justify-center">
+                            <span class="text-4xl">🔄</span>
+                        </div>
+                        <div class="p-4">
+                            <h4 class="font-bold mb-2 group-hover:text-yellow-500 transition">Comportamento Seguro</h4>
+                            <p class="text-sm text-slate-400">Atitudes que salvam vidas</p>
+                            <div class="pt-3 border-t border-slate-700 mt-3 text-sm">
+                                <ul class="list-disc pl-4 text-slate-400 space-y-1">
+                                    <li>Uso correto de cinto e dispositivos</li>
+                                    <li>Transporte de crianças</li>
+                                    <li>Comportamento em cruzamentos</li>
+                                    <li>Ceder a preferência quando necessário</li>
+                                </ul>
+                                <a href="#" class="block mt-3 text-yellow-500 hover:underline">Estudar agora</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Sinalização e Ultrapassagem -->
+                    <div class="flex-shrink-0 w-64 bg-slate-800 rounded-md overflow-hidden hover:scale-105 transition cursor-pointer group">
+                        <div class="h-36 bg-emerald-600 flex items-center justify-center">
+                            <span class="text-4xl">🚦</span>
+                        </div>
+                        <div class="p-4">
+                            <h4 class="font-bold mb-2 group-hover:text-yellow-500 transition">Sinalização e Ultrapassagem</h4>
+                            <p class="text-sm text-slate-400">Manobras seguras no trânsito</p>
+                            <div class="pt-3 border-t border-slate-700 mt-3 text-sm">
+                                <ul class="list-disc pl-4 text-slate-400 space-y-1">
+                                    <li>Uso correto dos indicadores</li>
+                                    <li>Ultrapassagem segura</li>
+                                    <li>Situações proibidas de ultrapassagem</li>
+                                    <li>Comunicação entre condutores</li>
+                                </ul>
+                                <a href="#" class="block mt-3 text-yellow-500 hover:underline">Estudar agora</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-slate-900 to-slate-900/0 pointer-events-none"></div>
             </div>
 
-            <div class="mb-6">
-              <label class="block mb-2 text-sm">Quantidade de questões</label>
-              <div class="flex flex-wrap gap-2">
-                <button class="q-btn" data-q="20">20</button>
-                <button class="q-btn" data-q="30">30</button>
-                <button class="q-btn active" data-q="40">40</button>
-                <button class="q-btn" data-q="60">60</button>
-              </div>
+            <!-- Placas e Sinalização -->
+            <div class="relative mb-16 pb-4 overflow-hidden">
+                <h3 class="text-xl font-bold mb-4">Placas e Sinalização</h3>
+                <div class="flex space-x-4 overflow-x-auto pb-4 scrollbar-thin scrollbar-thumb-yellow-500 scrollbar-track-slate-800">
+                    <!-- Placas de Regulamentação -->
+                    <div class="flex-shrink-0 w-64 bg-slate-800 rounded-md overflow-hidden hover:scale-105 transition cursor-pointer group">
+                        <div class="h-36 bg-red-600 flex items-center justify-center">
+                            <span class="text-4xl">⛔</span>
+                        </div>
+                        <div class="p-4">
+                            <h4 class="font-bold mb-2 group-hover:text-yellow-500 transition">Placas de Regulamentação</h4>
+                            <p class="text-sm text-slate-400">Ordens e proibições no trânsito</p>
+                            <div class="pt-3 border-t border-slate-700 mt-3 text-sm">
+                                <ul class="list-disc pl-4 text-slate-400 space-y-1">
+                                    <li>Formato e cores padronizadas</li>
+                                    <li>Placas de parada obrigatória</li>
+                                    <li>Limites de velocidade</li>
+                                    <li>Proibições diversas</li>
+                                </ul>
+                                <a href="#" class="block mt-3 text-yellow-500 hover:underline">Estudar agora</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Placas de Advertência -->
+                    <div class="flex-shrink-0 w-64 bg-slate-800 rounded-md overflow-hidden hover:scale-105 transition cursor-pointer group">
+                        <div class="h-36 bg-yellow-600 flex items-center justify-center">
+                            <span class="text-4xl">⚠</span>
+                        </div>
+                        <div class="p-4">
+                            <h4 class="font-bold mb-2 group-hover:text-yellow-500 transition">Placas de Advertência</h4>
+                            <p class="text-sm text-slate-400">Sinais de alerta para condições da via</p>
+                            <div class="pt-3 border-t border-slate-700 mt-3 text-sm">
+                                <ul class="list-disc pl-4 text-slate-400 space-y-1">
+                                    <li>Curvas, cruzamentos e bifurcações</li>
+                                    <li>Pista escorregadia</li>
+                                    <li>Estreitamento de pista</li>
+                                    <li>Áreas escolares e pedestres</li>
+                                </ul>
+                                <a href="#" class="block mt-3 text-yellow-500 hover:underline">Estudar agora</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Placas de Indicação -->
+                    <div class="flex-shrink-0 w-64 bg-slate-800 rounded-md overflow-hidden hover:scale-105 transition cursor-pointer group">
+                        <div class="h-36 bg-blue-600 flex items-center justify-center">
+                            <span class="text-4xl">🚥</span>
+                        </div>
+                        <div class="p-4">
+                            <h4 class="font-bold mb-2 group-hover:text-yellow-500 transition">Placas de Indicação</h4>
+                            <p class="text-sm text-slate-400">Orientação e informações úteis</p>
+                            <div class="pt-3 border-t border-slate-700 mt-3 text-sm">
+                                <ul class="list-disc pl-4 text-slate-400 space-y-1">
+                                    <li>Direções e destinos</li>
+                                    <li>Serviços auxiliares</li>
+                                    <li>Localidades e atrativos</li>
+                                    <li>Distâncias e quilometragens</li>
+                                </ul>
+                                <a href="#" class="block mt-3 text-yellow-500 hover:underline">Estudar agora</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Marcas Viárias -->
+                    <div class="flex-shrink-0 w-64 bg-slate-800 rounded-md overflow-hidden hover:scale-105 transition cursor-pointer group">
+                        <div class="h-36 bg-white flex items-center justify-center">
+                            <span class="text-4xl text-black">↔</span>
+                        </div>
+                        <div class="p-4">
+                            <h4 class="font-bold mb-2 group-hover:text-yellow-500 transition">Marcas Viárias</h4>
+                            <p class="text-sm text-slate-400">Sinalização horizontal nas vias</p>
+                            <div class="pt-3 border-t border-slate-700 mt-3 text-sm">
+                                <ul class="list-disc pl-4 text-slate-400 space-y-1">
+                                    <li>Linhas contínuas e tracejadas</li>
+                                    <li>Faixas de pedestres</li>
+                                    <li>Áreas de estacionamento</li>
+                                    <li>Marcações de canalização</li>
+                                </ul>
+                                <a href="#" class="block mt-3 text-yellow-500 hover:underline">Estudar agora</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Semáforos -->
+                    <div class="flex-shrink-0 w-64 bg-slate-800 rounded-md overflow-hidden hover:scale-105 transition cursor-pointer group">
+                        <div class="h-36 bg-green-600 flex items-center justify-center">
+                            <span class="text-4xl">🚦</span>
+                        </div>
+                        <div class="p-4">
+                            <h4 class="font-bold mb-2 group-hover:text-yellow-500 transition">Semáforos</h4>
+                            <p class="text-sm text-slate-400">Sinalização semafórica</p>
+                            <div class="pt-3 border-t border-slate-700 mt-3 text-sm">
+                                <ul class="list-disc pl-4 text-slate-400 space-y-1">
+                                    <li>Significado das cores</li>
+                                    <li>Semáforos para veículos</li>
+                                    <li>Semáforos para pedestres</li>
+                                    <li>Semáforos especiais</li>
+                                </ul>
+                                <a href="#" class="block mt-3 text-yellow-500 hover:underline">Estudar agora</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-slate-900 to-slate-900/0 pointer-events-none"></div>
+                <div class="w-full flex justify-center mt-8">
+                    <img src="https://preview.webstudio.ai/cgi/image/dev/109fcd2fdcd38cab47e170ce2b84dbd85a76cf701797b37c671484712f7c759e.png?width=1408&height=704&format=auto" alt="Placas de trânsito em estilo De Stijl" class="rounded-lg shadow-lg w-full max-w-3xl" width="1408" height="704">
+                </div>
             </div>
 
-            <div class="flex gap-4">
-              <button id="start-simulado" class="w-full bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-3 px-6 rounded-md transition">Iniciar Simulado</button>
+            <!-- Outras categorias transformadas em blocos detalhados -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
+                <!-- Primeiros Socorros -->
+                <div class="bg-slate-800 rounded-lg p-6 hover:bg-slate-800/80 transition cursor-pointer">
+                    <div class="flex items-start">
+                        <div class="w-16 h-16 bg-red-600 rounded-sm flex items-center justify-center text-2xl flex-shrink-0 mr-4">🚑</div>
+                        <div>
+                            <h3 class="font-bold text-xl mb-3">Primeiros Socorros</h3>
+                            <p class="text-slate-400 mb-4">Procedimentos emergenciais em acidentes de trânsito</p>
+                            <div class="grid grid-cols-2 gap-2 text-sm">
+                                <div class="bg-slate-700/50 p-2 rounded">
+                                    <h4 class="font-medium text-yellow-500">Kit de emergência</h4>
+                                    <p class="text-slate-400">Itens essenciais para prevenção</p>
+                                </div>
+                                <div class="bg-slate-700/50 p-2 rounded">
+                                    <h4 class="font-medium text-yellow-500">Sinalização do local</h4>
+                                    <p class="text-slate-400">Evitando acidentes secundários</p>
+                                </div>
+                                <div class="bg-slate-700/50 p-2 rounded">
+                                    <h4 class="font-medium text-yellow-500">Avaliação da vítima</h4>
+                                    <p class="text-slate-400">Verificando sinais vitais</p>
+                                </div>
+                                <div class="bg-slate-700/50 p-2 rounded">
+                                    <h4 class="font-medium text-yellow-500">Procedimentos</h4>
+                                    <p class="text-slate-400">RCP, hemorragia, fratura</p>
+                                </div>
+                            </div>
+                            <a href="#" class="block mt-4 text-yellow-500 hover:underline">Ver conteúdo completo</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Meio Ambiente -->
+                <div class="bg-slate-800 rounded-lg p-6 hover:bg-slate-800/80 transition cursor-pointer">
+                    <div class="flex items-start">
+                        <div class="w-16 h-16 bg-green-600 rounded-sm flex items-center justify-center text-2xl flex-shrink-0 mr-4">🌱</div>
+                        <div>
+                            <h3 class="font-bold text-xl mb-3">Meio Ambiente</h3>
+                            <p class="text-slate-400 mb-4">Impacto dos veículos no meio ambiente e medidas sustentáveis</p>
+                            <div class="grid grid-cols-2 gap-2 text-sm">
+                                <div class="bg-slate-700/50 p-2 rounded">
+                                    <h4 class="font-medium text-yellow-500">Emissão de poluentes</h4>
+                                    <p class="text-slate-400">Gases nocivos e efeitos</p>
+                                </div>
+                                <div class="bg-slate-700/50 p-2 rounded">
+                                    <h4 class="font-medium text-yellow-500">Manutenção preventiva</h4>
+                                    <p class="text-slate-400">Menor impacto ambiental</p>
+                                </div>
+                                <div class="bg-slate-700/50 p-2 rounded">
+                                    <h4 class="font-medium text-yellow-500">Resíduos automotivos</h4>
+                                    <p class="text-slate-400">Descarte correto de peças</p>
+                                </div>
+                                <div class="bg-slate-700/50 p-2 rounded">
+                                    <h4 class="font-medium text-yellow-500">Condução econômica</h4>
+                                    <p class="text-slate-400">Economia e meio ambiente</p>
+                                </div>
+                            </div>
+                            <a href="#" class="block mt-4 text-yellow-500 hover:underline">Ver conteúdo completo</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Mecânica Básica -->
+                <div class="bg-slate-800 rounded-lg p-6 hover:bg-slate-800/80 transition cursor-pointer">
+                    <div class="flex items-start">
+                        <div class="w-16 h-16 bg-blue-600 rounded-sm flex items-center justify-center text-2xl flex-shrink-0 mr-4">🔧</div>
+                        <div>
+                            <h3 class="font-bold text-xl mb-3">Mecânica Básica</h3>
+                            <p class="text-slate-400 mb-4">Conhecimentos essenciais sobre o funcionamento do veículo</p>
+                            <div class="grid grid-cols-2 gap-2 text-sm">
+                                <div class="bg-slate-700/50 p-2 rounded">
+                                    <h4 class="font-medium text-yellow-500">Motor e funcionamento</h4>
+                                    <p class="text-slate-400">Princípios básicos</p>
+                                </div>
+                                <div class="bg-slate-700/50 p-2 rounded">
+                                    <h4 class="font-medium text-yellow-500">Sistemas do veículo</h4>
+                                    <p class="text-slate-400">Freios, direção, suspensão</p>
+                                </div>
+                                <div class="bg-slate-700/50 p-2 rounded">
+                                    <h4 class="font-medium text-yellow-500">Verificações diárias</h4>
+                                    <p class="text-slate-400">Itens essenciais a checar</p>
+                                </div>
+                                <div class="bg-slate-700/50 p-2 rounded">
+                                    <h4 class="font-medium text-yellow-500">Resolvendo problemas</h4>
+                                    <p class="text-slate-400">Pneu furado, superaquecimento</p>
+                                </div>
+                            </div>
+                            <a href="#" class="block mt-4 text-yellow-500 hover:underline">Ver conteúdo completo</a>
+                        </div>
+                    </div>
+                    <div class="mt-6">
+                        <img src="https://preview.webstudio.ai/cgi/image/dev/9db6b3e6e37145c5fa089f503fb9363dbd303c1a5dd6bb474893a555fbca9eb4.png?width=1408&height=704&format=auto" alt="Diagrama de mecânica básica em estilo De Stijl" class="w-full rounded-lg shadow-lg" width="1408" height="704">
+                    </div>
+                </div>
+                
+                <!-- Cidadania no Trânsito -->
+                <div class="bg-slate-800 rounded-lg p-6 hover:bg-slate-800/80 transition cursor-pointer">
+                    <div class="flex items-start">
+                        <div class="w-16 h-16 bg-yellow-600 rounded-sm flex items-center justify-center text-2xl flex-shrink-0 mr-4">🚸</div>
+                        <div>
+                            <h3 class="font-bold text-xl mb-3">Cidadania no Trânsito</h3>
+                            <p class="text-slate-400 mb-4">Valores éticos e comportamento responsável no trânsito</p>
+                            <div class="grid grid-cols-2 gap-2 text-sm">
+                                <div class="bg-slate-700/50 p-2 rounded">
+                                    <h4 class="font-medium text-yellow-500">Valores coletivos</h4>
+                                    <p class="text-slate-400">Respeito e convivência</p>
+                                </div>
+                                <div class="bg-slate-700/50 p-2 rounded">
+                                    <h4 class="font-medium text-yellow-500">Grupos vulneráveis</h4>
+                                    <p class="text-slate-400">Pedestres, ciclistas, idosos</p>
+                                </div>
+                                <div class="bg-slate-700/50 p-2 rounded">
+                                    <h4 class="font-medium text-yellow-500">Civilidade</h4>
+                                    <p class="text-slate-400">Cortesia e solidariedade</p>
+                                </div>
+                                <div class="bg-slate-700/50 p-2 rounded">
+                                    <h4 class="font-medium text-yellow-500">Stress no trânsito</h4>
+                                    <p class="text-slate-400">Gerenciando emoções</p>
+                                </div>
+                            </div>
+                            <a href="#" class="block mt-4 text-yellow-500 hover:underline">Ver conteúdo completo</a>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-
-          <!-- Meus Simulados Recentes (histórico) -->
-          <div class="bg-slate-800/60 backdrop-blur-sm rounded-lg p-6">
-            <h3 class="font-bold mb-4">Meus Simulados Recentes</h3>
-            <div id="history-list" class="space-y-4">
-              <!-- preenchido via JS -->
-            </div>
-          </div>
         </div>
-      </section>
+    </section>
 
-      <!-- PAGE: Quiz / Simulado (renderizado dinamicamente) -->
-      <section data-page="quiz" class="page hidden py-12">
+    <!-- Simulados Section com conteúdo de exemplo -->
+    <section class="py-16 relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-64 h-64 bg-yellow-600 rounded-br-full opacity-10"></div>
+        <div class="absolute bottom-0 right-0 w-96 h-96 bg-blue-600 rounded-tl-full opacity-10"></div>
+        
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl font-bold mb-6">Simulados Personalizados</h2>
+                    <p class="text-lg mb-6">Prepare-se para o exame oficial com nossos simulados adaptados ao seu estado e necessidades.</p>
+                    
+                    <div class="bg-slate-800/60 backdrop-blur-sm rounded-lg p-6 mb-8">
+                        <h3 class="font-bold mb-4">Filtros</h3>
+                        
+                        <div class="mb-4">
+                            <label class="block mb-2 text-sm">Estado</label>
+                            <select class="w-full bg-slate-700 py-3 px-4 rounded-md border border-slate-600 focus:border-yellow-500 focus:ring-1 focus:ring-yellow-500 outline-none">
+                                <option>Todos os estados</option>
+                                <option>São Paulo</option>
+                                <option>Minas Gerais</option>
+                                <option>Rio de Janeiro</option>
+                                <option>Espírito Santo</option>
+                                <option>Bahia</option>
+                                <option>Outros estados...</option>
+                            </select>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label class="block mb-2 text-sm">Matéria</label>
+                            <select class="w-full bg-slate-700 py-3 px-4 rounded-md border border-slate-600 focus:border-yellow-500 focus:ring-1 focus:ring-yellow-500 outline-none">
+                                <option>Todas as matérias</option>
+                                <option>Legislação</option>
+                                <option>Placas e Sinalização</option>
+                                <option>Direção Defensiva</option>
+                                <option>Primeiros Socorros</option>
+                                <option>Outras matérias...</option>
+                            </select>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label class="block mb-2 text-sm">Quantidade de questões</label>
+                            <div class="flex flex-wrap gap-2">
+                                <button class="bg-slate-700 hover:bg-slate-600 py-2 px-4 rounded-md">20</button>
+                                <button class="bg-slate-700 hover:bg-slate-600 py-2 px-4 rounded-md">30</button>
+                                <button class="bg-yellow-500 text-black font-bold py-2 px-4 rounded-md">40</button>
+                                <button class="bg-slate-700 hover:bg-slate-600 py-2 px-4 rounded-md">60</button>
+                            </div>
+                        </div>
+                        
+                        <button class="w-full bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-3 px-6 rounded-md transition">Iniciar Simulado</button>
+                    </div>
+                    
+                    <!-- Simulados Recentes -->
+                    <div class="bg-slate-800/60 backdrop-blur-sm rounded-lg p-6">
+                        <h3 class="font-bold mb-4">Meus Simulados Recentes</h3>
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-center p-3 bg-slate-700/60 rounded-md">
+                                <div>
+                                    <h4 class="font-medium">Legislação Geral</h4>
+                                    <p class="text-sm text-slate-400">30 questões • 13 Jun 2023</p>
+                                </div>
+                                <div class="text-right">
+                                    <span class="text-green-500 font-bold">82%</span>
+                                    <p class="text-xs text-slate-400">Aprovado</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex justify-between items-center p-3 bg-slate-700/60 rounded-md">
+                                <div>
+                                    <h4 class="font-medium">Sinalização</h4>
+                                    <p class="text-sm text-slate-400">40 questões • 11 Jun 2023</p>
+                                </div>
+                                <div class="text-right">
+                                    <span class="text-red-500 font-bold">68%</span>
+                                    <p class="text-xs text-slate-400">Reprovado</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex justify-between items-center p-3 bg-slate-700/60 rounded-md">
+                                <div>
+                                    <h4 class="font-medium">Simulado Completo SP</h4>
+                                    <p class="text-sm text-slate-400">60 questões • 09 Jun 2023</p>
+                                </div>
+                                <div class="text-right">
+                                    <span class="text-green-500 font-bold">78%</span>
+                                    <p class="text-xs text-slate-400">Aprovado</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <img src="https://preview.webstudio.ai/cgi/image/dev/021dc1731f1a2657c33f1f85107f717bfa3a98d9329311f7f151341e73b39c78.png?width=1408&height=704&format=auto" alt="Interface de simulado" class="rounded-lg shadow-2xl" width="1408" height="704">
+                    
+                    <!-- Exemplo de questão -->
+                    <div class="mt-8 bg-slate-800 rounded-lg p-6 shadow-lg">
+                        <h3 class="font-bold text-lg mb-4">Exemplo de Questão:</h3>
+                        
+                        <div class="mb-6">
+                            <p class="mb-4">Ao se deparar com um semáforo com a luz amarela acesa, o condutor deve:</p>
+                            
+                            <div class="space-y-3">
+                                <label class="flex items-center p-3 bg-slate-700/60 rounded-md cursor-pointer hover:bg-slate-700">
+                                    <input type="radio" name="question" class="mr-3">
+                                    <span>Acelerar rapidamente para passar antes que fique vermelho</span>
+                                </label>
+                                
+                                <label class="flex items-center p-3 bg-slate-700/60 rounded-md cursor-pointer hover:bg-slate-700">
+                                    <input type="radio" name="question" class="mr-3">
+                                    <span>Frear bruscamente, independente das condições</span>
+                                </label>
+                                
+                                <label class="flex items-center p-3 bg-green-700/30 border border-green-500 rounded-md cursor-pointer">
+                                    <input type="radio" name="question" class="mr-3" checked>
+                                    <span>Parar o veículo, salvo se não houver segurança para fazê-lo</span>
+                                </label>
+                                
+                                <label class="flex items-center p-3 bg-slate-700/60 rounded-md cursor-pointer hover:bg-slate-700">
+                                    <input type="radio" name="question" class="mr-3">
+                                    <span>Continuar normalmente, pois a luz amarela não tem significado específico</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="p-4 bg-green-900/20 rounded-md border-l-4 border-green-500">
+                            <h4 class="font-bold text-green-500 mb-2">Resposta Correta!</h4>
+                            <p>De acordo com o Art. 183 do CTB, o condutor deve parar o veículo quando o semáforo está amarelo, a menos que isso não possa ser feito com segurança.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-16 bg-slate-900">
         <div class="container mx-auto px-4">
-          <div class="flex justify-between items-center mb-6">
-            <h2 id="quiz-title" class="text-2xl font-bold">Simulado</h2>
-            <div class="text-sm">
-              <span>Tempo: </span><span id="timer">00:00</span>
+            <h2 class="text-3xl font-bold text-center mb-12">Por que escolher nossa plataforma?</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-slate-800 p-6 rounded-lg hover:translate-y-[-8px] transition duration-300">
+                    <div class="w-16 h-16 bg-yellow-500 rounded-sm flex items-center justify-center mb-4">
+                        <span class="text-black text-2xl">📚</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Conteúdo Completo</h3>
+                    <p class="text-slate-400">Todo o material teórico necessário para sua aprovação, organizado de forma clara e objetiva.</p>
+                    <ul class="mt-4 space-y-2 text-sm text-slate-400">
+                        <li class="flex items-center">
+                            <span class="text-yellow-500 mr-2">•</span> 8 grandes áreas de conhecimento
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-yellow-500 mr-2">•</span> Textos explicativos detalhados
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-yellow-500 mr-2">•</span> Resumos para consulta rápida
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="bg-slate-800 p-6 rounded-lg hover:translate-y-[-8px] transition duration-300">
+                    <div class="w-16 h-16 bg-red-600 rounded-sm flex items-center justify-center mb-4">
+                        <span class="text-2xl">🧠</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">10.000+ Questões</h3>
+                    <p class="text-slate-400">Banco de questões extenso com perguntas no padrão oficial das provas do DETRAN.</p>
+                    <ul class="mt-4 space-y-2 text-sm text-slate-400">
+                        <li class="flex items-center">
+                            <span class="text-yellow-500 mr-2">•</span> Questões exclusivas e atualizadas
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-yellow-500 mr-2">•</span> Gabarito e explicação detalhada
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-yellow-500 mr-2">•</span> Níveis variados de dificuldade
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="bg-slate-800 p-6 rounded-lg hover:translate-y-[-8px] transition duration-300">
+                    <div class="w-16 h-16 bg-blue-600 rounded-sm flex items-center justify-center mb-4">
+                        <span class="text-2xl">🎯</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Simulados Personalizados</h3>
+                    <p class="text-slate-400">Crie simulados adaptados ao seu estado, matérias de interesse e nível de dificuldade.</p>
+                    <ul class="mt-4 space-y-2 text-sm text-slate-400">
+                        <li class="flex items-center">
+                            <span class="text-yellow-500 mr-2">•</span> Cronometragem real como na prova
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-yellow-500 mr-2">•</span> Distribuição por matéria igual ao DETRAN
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-yellow-500 mr-2">•</span> Interface idêntica ao exame oficial
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="bg-slate-800 p-6 rounded-lg hover:translate-y-[-8px] transition duration-300">
+                    <div class="w-16 h-16 bg-green-600 rounded-sm flex items-center justify-center mb-4">
+                        <span class="text-2xl">📊</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Análise de Desempenho</h3>
+                    <p class="text-slate-400">Acompanhe seu progresso e receba recomendações personalizadas para melhorar.</p>
+                    <ul class="mt-4 space-y-2 text-sm text-slate-400">
+                        <li class="flex items-center">
+                            <span class="text-yellow-500 mr-2">•</span> Gráficos de evolução por matéria
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-yellow-500 mr-2">•</span> Identificação de pontos fracos
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-yellow-500 mr-2">•</span> Recomendações de estudo personalizadas
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="bg-slate-800 p-6 rounded-lg hover:translate-y-[-8px] transition duration-300">
+                    <div class="w-16 h-16 bg-purple-600 rounded-sm flex items-center justify-center mb-4">
+                        <span class="text-2xl">📱</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Acesso em Qualquer Dispositivo</h3>
+                    <p class="text-slate-400">Estude pelo computador, tablet ou celular, onde e quando quiser.</p>
+                    <ul class="mt-4 space-y-2 text-sm text-slate-400">
+                        <li class="flex items-center">
+                            <span class="text-yellow-500 mr-2">•</span> Interface responsiva para todos dispositivos
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-yellow-500 mr-2">•</span> Sincronização automática de progresso
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-yellow-500 mr-2">•</span> Modo offline para estudar sem internet
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="bg-slate-800 p-6 rounded-lg hover:translate-y-[-8px] transition duration-300">
+                    <div class="w-16 h-16 bg-yellow-500 rounded-sm flex items-center justify-center mb-4">
+                        <span class="text-black text-2xl">💰</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Preço Acessível</h3>
+                    <p class="text-slate-400">Investimento baixo com alto retorno: sua aprovação na primeira tentativa.</p>
+                    <ul class="mt-4 space-y-2 text-sm text-slate-400">
+                        <li class="flex items-center">
+                            <span class="text-yellow-500 mr-2">•</span> A partir de R$30 por 30 dias de acesso
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-yellow-500 mr-2">•</span> Economia comparado a aulas extras
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-yellow-500 mr-2">•</span> Garantia de satisfação ou seu dinheiro de volta
+                        </li>
+                    </ul>
+                </div>
             </div>
-          </div>
-
-          <div id="quiz-area" class="bg-slate-800 rounded-lg p-6">
-            <!-- Pergunta atual -->
-            <div id="question-container"></div>
-
-            <div class="mt-6 flex justify-between items-center">
-              <div>
-                <button id="prev-q" class="px-4 py-2 rounded-md bg-slate-700">Anterior</button>
-                <button id="next-q" class="px-4 py-2 rounded-md bg-slate-700">Próxima</button>
-              </div>
-              <div>
-                <button id="finish-sim" class="px-4 py-2 rounded-md bg-yellow-500 text-black">Finalizar Simulado</button>
-              </div>
-            </div>
-          </div>
         </div>
-      </section>
+    </section>
 
-      <!-- PAGE: Conteúdo detalhado por matéria (render dynamic) -->
-      <section data-page="study" class="page hidden py-12">
+    <!-- Netflix UI Demo -->
+    <section class="py-16">
         <div class="container mx-auto px-4">
-          <button id="back-to-content" class="mb-4 text-sm text-yellow-500 hover:underline">&larr; Voltar</button>
-          <div id="study-area" class="bg-slate-800 rounded-lg p-6">
-            <!-- Conteúdo carregado por JS -->
-          </div>
+            <h2 class="text-3xl font-bold mb-12">Interface inspirada na Netflix</h2>
+            <div class="mb-12">
+                <img src="https://preview.webstudio.ai/cgi/image/dev/374598b65a27e4d131c3da12dca09339df04c7c12cc9232e424d5c254a963ca7.png?width=1408&height=704&format=auto" alt="Interface estilo Netflix" class="w-full rounded-lg shadow-2xl" width="1408" height="704">
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">Navegação Intuitiva</h3>
+                    <p class="text-lg mb-6">Nossa plataforma utiliza um sistema de navegação familiar e intuitivo, inspirado nas melhores interfaces de streaming.</p>
+                    
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <div class="w-6 h-6 bg-yellow-500 rounded-sm flex-shrink-0 mt-1 mr-3"></div>
+                            <p>Categorias organizadas em carrosséis horizontais para acesso rápido a qualquer conteúdo</p>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="w-6 h-6 bg-red-600 rounded-sm flex-shrink-0 mt-1 mr-3"></div>
+                            <p>Cards interativos com visualização rápida e resumo do conteúdo de cada módulo</p>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="w-6 h-6 bg-blue-600 rounded-sm flex-shrink-0 mt-1 mr-3"></div>
+                            <p>Navegação fluida e responsiva em qualquer dispositivo, adaptando-se automaticamente</p>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="w-6 h-6 bg-green-600 rounded-sm flex-shrink-0 mt-1 mr-3"></div>
+                            <p>Sistema de busca avançado para encontrar qualquer conteúdo ou questão específica</p>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="w-6 h-6 bg-purple-600 rounded-sm flex-shrink-0 mt-1 mr-3"></div>
+                            <p>Marcadores de progresso visual indicando quais conteúdos já foram estudados</p>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">Planos de Acesso</h3>
+                    <div class="bg-slate-800 rounded-lg p-6 mb-6">
+                        <h4 class="text-xl font-bold mb-4 text-yellow-500">Plano Básico</h4>
+                        <div class="text-3xl font-bold mb-4">R$ 30,00</div>
+                        <p class="mb-4 text-slate-400">Acesso por 30 dias</p>
+                        <ul class="space-y-2 mb-6">
+                            <li class="flex items-center">
+                                <span class="text-green-500 mr-2">✓</span> Conteúdo teórico completo
+                            </li>
+                            <li class="flex items-center">
+                                <span class="text-green-500 mr-2">✓</span> 10.000+ questões
+                            </li>
+                            <li class="flex items-center">
+                                <span class="text-green-500 mr-2">✓</span> Simulados ilimitados
+                            </li>
+                            <li class="flex items-center">
+                                <span class="text-green-500 mr-2">✓</span> Acesso em qualquer dispositivo
+                            </li>
+                        </ul>
+                        <button class="w-full bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-3 px-6 rounded-md transition">Assinar</button>
+                    </div>
+                    
+                    <div class="bg-slate-800 rounded-lg p-6">
+                        <h4 class="text-xl font-bold mb-4 text-yellow-500">Plano Completo</h4>
+                        <div class="text-3xl font-bold mb-4">R$ 60,00</div>
+                        <p class="mb-4 text-slate-400">Acesso por 90 dias</p>
+                        <ul class="space-y-2 mb-6">
+                            <li class="flex items-center">
+                                <span class="text-green-500 mr-2">✓</span> Todos os recursos do plano básico
+                            </li>
+                            <li class="flex items-center">
+                                <span class="text-green-500 mr-2">✓</span> Análise de desempenho avançada
+                            </li>
+                            <li class="flex items-center">
+                                <span class="text-green-500 mr-2">✓</span> Recomendações personalizadas
+                            </li>
+                            <li class="flex items-center">
+                                <span class="text-green-500 mr-2">✓</span> Revisão direcionada de erros
+                            </li>
+                            <li class="flex items-center">
+                                <span class="text-green-500 mr-2">✓</span> Modo de estudo offline
+                            </li>
+                        </ul>
+                        <button class="w-full bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-3 px-6 rounded-md transition">Assinar</button>
+                    </div>
+                </div>
+            </div>
         </div>
-      </section>
+    </section>
 
-      <!-- PAGE: Perfil / login -->
-      <section data-page="profile" class="page hidden py-12">
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-br from-blue-600 to-slate-900">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold mb-6">Pronto para conquistar sua CNH?</h2>
+            <p class="text-xl max-w-2xl mx-auto mb-8">Junte-se aos milhares de alunos que foram aprovados na primeira tentativa com nossa plataforma.</p>
+            <button class="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-4 px-8 rounded-md text-lg transition inline-block">Comece Hoje por Apenas R$ 30</button>
+            <p class="mt-4 text-slate-300">Satisfação garantida ou seu dinheiro de volta</p>
+            
+            <!-- Depoimentos -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+                <div class="bg-slate-800/50 backdrop-blur-sm p-6 rounded-lg text-left">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-blue-600 rounded-full mr-4"></div>
+                        <div>
+                            <h4 class="font-bold">Pedro Silva</h4>
+                            <p class="text-sm text-slate-400">São Paulo - SP</p>
+                        </div>
+                    </div>
+                    <p class="italic">"Fui aprovado de primeira na prova teórica com 90% de acertos! Os simulados são idênticos à prova real do DETRAN."</p>
+                </div>
+                
+                <div class="bg-slate-800/50 backdrop-blur-sm p-6 rounded-lg text-left">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-red-600 rounded-full mr-4"></div>
+                        <div>
+                            <h4 class="font-bold">Ana Ferreira</h4>
+                            <p class="text-sm text-slate-400">Belo Horizonte - MG</p>
+                        </div>
+                    </div>
+                    <p class="italic">"O conteúdo é muito bem explicado e organizado. Consegui estudar no meu ritmo e fui aprovada com tranquilidade."</p>
+                </div>
+                
+                <div class="bg-slate-800/50 backdrop-blur-sm p-6 rounded-lg text-left">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-green-600 rounded-full mr-4"></div>
+                        <div>
+                            <h4 class="font-bold">Carlos Mendes</h4>
+                            <p class="text-sm text-slate-400">Salvador - BA</p>
+                        </div>
+                    </div>
+                    <p class="italic">"Excelente plataforma! Os simulados personalizados para o meu estado foram fundamentais para minha aprovação."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 py-12">
         <div class="container mx-auto px-4">
-          <h2 class="text-2xl font-bold mb-6">Perfil</h2>
-
-          <div id="profile-area" class="bg-slate-800 rounded-lg p-6">
-            <!-- Se usuário logado -> mostrar perfil e logout, senão mostrar formulário -->
-            <div id="profile-logged" class="hidden">
-              <p id="profile-email"></p>
-              <button id="logout-btn" class="mt-4 bg-red-600 py-2 px-4 rounded-md">Sair</button>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="w-8 h-8 bg-red-600 flex items-center justify-center rounded-sm">
+                            <span class="text-sm font-bold">A</span>
+                        </div>
+                        <h3 class="text-xl font-bold">AutoEscola<span class="text-yellow-500">Digital</span></h3>
+                    </div>
+                    <p class="text-slate-400">A melhor plataforma para sua aprovação no exame teórico do DETRAN.</p>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4">Plataforma</h4>
+                    <ul class="space-y-2 text-slate-400">
+                        <li><a href="#" class="hover:text-yellow-500 transition">Conteúdo</a></li>
+                        <li><a href="#" class="hover:text-yellow-500 transition">Simulados</a></li>
+                        <li><a href="#" class="hover:text-yellow-500 transition">Planos</a></li>
+                        <li><a href="#" class="hover:text-yellow-500 transition">Depoimentos</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4">Recursos</h4>
+                    <ul class="space-y-2 text-slate-400">
+                        <li><a href="#" class="hover:text-yellow-500 transition">Blog</a></li>
+                        <li><a href="#" class="hover:text-yellow-500 transition">Perguntas Frequentes</a></li>
+                        <li><a href="#" class="hover:text-yellow-500 transition">Suporte</a></li>
+                        <li><a href="#" class="hover:text-yellow-500 transition">Política de Privacidade</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4">Contato</h4>
+                    <ul class="space-y-2 text-slate-400">
+                        <li>contato@autoescoladigital.com.br</li>
+                        <li>(11) 99999-9999</li>
+                        <li>@autoescoladigital</li>
+                    </ul>
+                </div>
             </div>
-
-            <div id="profile-login" class="p-4">
-              <h4 class="font-bold mb-3">Entrar / Registrar</h4>
-              <div class="mb-3">
-                <label class="block mb-1 text-sm">E-mail</label>
-                <input id="login-email" class="w-full bg-slate-700 p-3 rounded" />
-              </div>
-              <div class="mb-3">
-                <label class="block mb-1 text-sm">Senha</label>
-                <input id="login-pass" type="password" class="w-full bg-slate-700 p-3 rounded" />
-              </div>
-              <div class="flex gap-3">
-                <button id="do-login" class="bg-yellow-500 text-black py-2 px-4 rounded-md">Entrar</button>
-                <button id="do-register" class="bg-blue-600 py-2 px-4 rounded-md">Registrar</button>
-              </div>
-              <p id="auth-msg" class="text-sm mt-3 text-slate-400"></p>
+            
+            <div class="border-t border-slate-800 mt-12 pt-6 text-center text-slate-500">
+                <p>© 2023 AutoEscola Digital. Todos os direitos reservados.</p>
             </div>
-
-          </div>
         </div>
-      </section>
-
-      <!-- PAGE: Meu Progresso (history) -->
-      <section data-page="history" class="page hidden py-12">
-        <div class="container mx-auto px-4">
-          <h2 class="text-2xl font-bold mb-6">Meu Progresso</h2>
-          <div class="bg-slate-800 rounded-lg p-6">
-            <div id="progress-area">
-              <!-- Preenchido por JS -->
-            </div>
-          </div>
-        </div>
-      </section>
-
-    </main>
-
-    <!-- Footer (mantive seu footer) -->
-    <footer class="bg-slate-950 py-12 mt-12">
-      <div class="container mx-auto px-4">
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-          <div>
-            <div class="flex items-center space-x-2 mb-4">
-              <div class="w-8 h-8 bg-red-600 flex items-center justify-center rounded-sm">
-                <span class="text-sm font-bold">A</span>
-              </div>
-              <h3 class="text-xl font-bold">AutoEscola<span class="text-yellow-500">Digital</span></h3>
-            </div>
-            <p class="text-slate-400">A melhor plataforma para sua aprovação no exame teórico do DETRAN.</p>
-          </div>
-
-          <div>
-            <h4 class="font-bold mb-4">Plataforma</h4>
-            <ul class="space-y-2 text-slate-400">
-              <li><a href="#" class="hover:text-yellow-500 transition">Conteúdo</a></li>
-              <li><a href="#" class="hover:text-yellow-500 transition">Simulados</a></li>
-              <li><a href="#" class="hover:text-yellow-500 transition">Planos</a></li>
-              <li><a href="#" class="hover:text-yellow-500 transition">Depoimentos</a></li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 class="font-bold mb-4">Recursos</h4>
-            <ul class="space-y-2 text-slate-400">
-              <li><a href="#" class="hover:text-yellow-500 transition">Blog</a></li>
-              <li><a href="#" class="hover:text-yellow-500 transition">Perguntas Frequentes</a></li>
-              <li><a href="#" class="hover:text-yellow-500 transition">Suporte</a></li>
-              <li><a href="#" class="hover:text-yellow-500 transition">Política de Privacidade</a></li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 class="font-bold mb-4">Contato</h4>
-            <ul class="space-y-2 text-slate-400">
-              <li>contato@autoescoladigital.com.br</li>
-              <li>(11) 99999-9999</li>
-              <li>@autoescoladigital</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="border-t border-slate-800 mt-12 pt-6 text-center text-slate-500">
-          <p>© 2023 AutoEscola Digital. Todos os direitos reservados.</p>
-        </div>
-      </div>
     </footer>
-
-    <!-- Login modal (simples) -->
-    <div id="modal-root" class="modal-root hidden">
-      <div class="modal-backdrop"></div>
-      <div class="modal">
-        <h3 class="font-bold mb-3">Login</h3>
-        <input id="modal-email" placeholder="E-mail" class="w-full mb-2 p-2 bg-slate-700 rounded" />
-        <input id="modal-pass" type="password" placeholder="Senha" class="w-full mb-3 p-2 bg-slate-700 rounded" />
-        <div class="flex gap-2">
-          <button id="modal-login" class="bg-yellow-500 px-4 py-2 rounded">Entrar</button>
-          <button id="modal-register" class="bg-blue-600 px-4 py-2 rounded">Registrar</button>
-          <button id="modal-close" class="ml-auto text-slate-400">Fechar</button>
-        </div>
-        <p id="modal-msg" class="text-sm mt-2 text-slate-400"></p>
-      </div>
-    </div>
-
-  </div>
-
-  <!-- Script -->
-  <script src="app.js"></script>
-</body>
-</html>
+</div>
